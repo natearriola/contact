@@ -1,0 +1,582 @@
+$colors: (
+  grey: #c9c9c9,
+  black: #000000,
+  offblack: #1a1a1a,
+  secondaryblue: rgb(83, 167, 234),
+  blue: #0a7198
+);
+
+/* FONTS */
+
+@import url("https://fonts.googleapis.com/css?family=Raleway:400,700");
+
+@font-face {
+  font-family: "big john";
+  src: url("/fonts/bigjohn-webfont.woff2") format("woff2"),
+    url("/fonts/bigjohn-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "slim joe";
+  src: url("/fonts/slimjoe-webfont.woff2") format("woff2"),
+    url("/fonts/slimjoe-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+html {
+  padding: 0;
+  margin: auto 0;
+}
+body {
+  margin: auto 0;
+  padding: 0;
+  font-family: "raleway", "Avenir";
+  overflow-x: hidden;
+  .header-flex {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    margin: auto 0;
+    padding: 2rem;
+  }
+
+  .logo {
+    max-width: 100%;
+    flex-grow: 1;
+  }
+
+  .logo img {
+    height: 40px;
+
+    width: 50px;
+  }
+
+  .ham {
+    width: 35px;
+    height: 30px;
+    display: block;
+    cursor: pointer;
+    transform: scaleX(-1);
+  }
+
+  .ham div {
+    height: 4px;
+    background: map-get($colors, offblack);
+    margin: 5px 0;
+    border-radius: 24px;
+    transition: 0.3s;
+  }
+
+  .menu {
+    display: none;
+  }
+
+  .one {
+    width: 50px;
+  }
+
+  .two {
+    width: 30px;
+  }
+
+  .three {
+    width: 40px;
+  }
+  .ham:hover div {
+    width: 50px;
+  }
+
+  .menu li {
+    padding: 10px;
+    list-style-type: none;
+    font-family: raleway;
+    font-weight: 400;
+    font-size: 12px;
+  }
+  .nav-container {
+    background-color: rgba(83, 167, 234, 0.9);
+    width: 100%;
+    height: 0;
+    z-index: 5;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    transition: all 0.5s;
+    overflow-y: hidden;
+    padding: 0;
+    overflow-x: hidden;
+  }
+  .nav {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+    padding: 0;
+  }
+
+  .nav li {
+    list-style-type: none;
+    padding: 10px 0;
+    font-size: 30px;
+    font-family: raleway;
+    font-weight: 700;
+  }
+
+  .nav li a {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .nav li a:hover {
+    color: map-get($colors, offblack);
+  }
+
+  .menu li a {
+    color: black;
+    text-decoration: none;
+
+    text-align: center;
+    width: 100vh;
+  }
+
+  .nav-container .closeBtn {
+    position: absolute;
+    top: 20px;
+    right: 50px;
+    font-size: 40px;
+    color: white;
+    text-decoration: none;
+    width: 5%;
+  }
+
+  /****************************
+ CONTENT SCSS
+ */
+
+  .title {
+    text-align: center;
+    font-family: big john;
+    color: map-get($colors, blue);
+  }
+  /**********************************
+Form Contact 
+*/
+
+  h4 {
+    text-align: center;
+    font-family: slim joe;
+    padding: 1rem;
+  }
+  .right {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 1rem;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: center;
+    padding-top: 1rem;
+  }
+  .button {
+    font-family: raleway;
+    color: #fff;
+    font-size: 12px;
+    text-decoration: none;
+    letter-spacing: 0.1rem;
+    padding: 0.5rem 1.5rem 0.5rem 1.5rem;
+    border-radius: 5%;
+    transition: all 0.3s ease;
+    background-color: map-get($colors, secondaryblue);
+    box-shadow: inset 0 0 0 99999px rgba(255, 255, 255, 0.1);
+  }
+  .button:hover {
+    box-shadow: none;
+  }
+
+  .social {
+    position: relative;
+    top: 2rem;
+  }
+
+  .left {
+    padding-bottom: 1rem;
+    display: grid;
+    grid-template-columns: repeat(2, 0.5fr);
+    grid-template-rows: repeat(3, 0.5fr);
+    justify-items: center;
+    align-content: center;
+    grid-gap: 3rem;
+    grid-template-areas:
+      "title title"
+      "insta linkin"
+      "twitter youtube";
+
+    a {
+      color: map-get($colors, secondaryblue);
+      transition: all 0.3s ease;
+    }
+
+    a:hover {
+      color: map-get($colors, offblack);
+    }
+
+    h4 {
+      grid-area: title;
+    }
+  }
+
+  footer {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    padding-bottom: 0.5rem;
+    padding-right: 2rem;
+    padding-left: 2rem;
+    .copy {
+      flex-grow: 1;
+      font-size: 12px;
+    }
+    .pgnum {
+      font-size: 16px;
+      font-family: big john;
+      span {
+        color: map-get($colors, blue);
+      }
+    }
+  }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1023px) and (-webkit-min-device-pixel-ratio: 1) {
+  body {
+    overflow-x: hidden;
+    .menu {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+
+      margin-right: 3rem;
+    }
+
+    .logo img {
+      height: 50px;
+
+      width: 60px;
+    }
+
+    .header-flex {
+      width: 80%;
+      margin: auto 0;
+      position: relative;
+      left: 10%;
+    }
+
+    .title {
+      padding-top: 1rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: 60vh;
+      justify-items: center;
+      align-items: start;
+    }
+
+    .right {
+      justify-content: flex-start;
+    }
+    .social {
+      top: 0;
+      height: 0;
+    }
+    .left {
+      grid-template-rows: repeat(3, 0.1fr);
+      grid-template-columns: repeat(2, 0.3fr);
+      grid-gap: 3rem;
+    }
+
+    footer {
+      height: 0;
+      padding: 0 5rem 1rem 5rem;
+    }
+  }
+}
+
+@media screen and (min-device-width: 1024px) and (max-device-width: 1440px) and (-webkit-min-device-pixel-ratio: 1) {
+  body {
+    overflow-x: hidden;
+    .header-flex {
+      padding: 5rem;
+      padding-top: 2rem;
+    }
+    .menu {
+      display: flex;
+
+      width: 100%;
+      justify-content: center;
+      margin-right: 4rem;
+    }
+    .logo img {
+      height: 50px;
+
+      width: 60px;
+    }
+    .title {
+      padding-top: 1rem;
+      font-size: 48px;
+    }
+
+    .social {
+      width: 100%;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: 60vh;
+      justify-items: center;
+      align-items: start;
+    }
+
+    .right {
+      justify-content: flex-start;
+    }
+    .social {
+      top: 0;
+      height: 0;
+    }
+    .left {
+      grid-template-rows: repeat(3, 0.1fr);
+      grid-template-columns: repeat(2, 0.3fr);
+      grid-gap: 3rem;
+    }
+
+    footer {
+      height: 5vh;
+      padding: 0 5rem 0rem 5rem;
+    }
+  }
+}
+
+@media screen and(min-device-width: 1440px) and (max-device-width: 1600px) {
+  body {
+    overflow-x: hidden;
+
+    .header-flex {
+      display: flex;
+      padding-top: 2rem;
+      padding: 5rem;
+    }
+
+    .menu {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      padding: 0;
+      margin-right: 3rem;
+    }
+
+    .menu li {
+      font-size: 16px;
+    }
+
+    .logo img {
+      width: 60px;
+      height: 50px;
+    }
+    .ham {
+      width: 35px;
+    }
+
+    .title {
+      padding-top: 1rem;
+      font-size: 48px;
+    }
+
+    .social {
+      width: 100%;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: 60vh;
+      justify-items: center;
+      align-items: start;
+    }
+
+    .right {
+      justify-content: flex-start;
+    }
+    .social {
+      top: 0;
+      height: 0;
+    }
+    .left {
+      grid-template-rows: repeat(3, 0.1fr);
+      grid-template-columns: repeat(2, 0.3fr);
+      grid-gap: 3rem;
+    }
+
+    footer {
+      height: 5vh;
+      padding: 0 5rem 0 5rem;
+    }
+  }
+}
+
+@media screen and(min-device-width: 1600px) and (max-device-width: 1920px) {
+  body {
+    overflow-x: hidden;
+    .header-flex {
+      display: flex;
+      justify-content: center;
+      padding-top: 2rem;
+      padding: 5rem;
+    }
+
+    .menu {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .menu li {
+      font-size: 16px;
+    }
+    .logo {
+      padding: 0;
+      margin: auto 0;
+      width: 10%;
+    }
+    .logo img {
+      padding: 0;
+    }
+    .ham {
+      width: 35px;
+    }
+
+    .title {
+      padding-top: 1rem;
+      font-size: 48px;
+    }
+
+    h4 {
+      font-size: 16px;
+    }
+
+    .social {
+      width: 100%;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: 60vh;
+      justify-items: center;
+      align-items: start;
+    }
+
+    .right {
+      justify-content: flex-start;
+    }
+    .social {
+      top: 0;
+      height: 0;
+    }
+    .left {
+      grid-template-rows: repeat(3, 0.1fr);
+      grid-template-columns: repeat(2, 0.3fr);
+      grid-gap: 3rem;
+    }
+
+    footer {
+      height: 0;
+      padding: 0 10rem 3rem 10rem;
+    }
+  }
+}
+
+@media screen and (min-device-width: 1920px) and (max-device-width: 2560px) and (-webkit-min-device-pixel-ratio: 1) {
+  body {
+    .header-flex {
+      padding: 10rem;
+      padding-top: 2rem;
+      padding-bottom: 5rem;
+    }
+    .menu {
+      display: flex;
+
+      width: 100%;
+      justify-content: center;
+      margin-right: 2rem;
+    }
+
+    .menu li {
+      font-size: 16px;
+    }
+    .logo {
+      display: flex;
+      justify-content: center;
+      padding: 0;
+      width: 10%;
+    }
+
+    .logo img {
+      padding-left: 2rem;
+    }
+
+    .title {
+      padding-top: 0rem;
+      font-size: 100px;
+    }
+
+    h4 {
+      font-size: 24px;
+    }
+
+    .social {
+      width: 100%;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: 50vh;
+      justify-items: center;
+      align-items: start;
+      border: 2px solid red;
+    }
+
+    .right {
+      justify-content: flex-start;
+    }
+    .social {
+      top: 0;
+      height: 0;
+    }
+    .left {
+      grid-template-rows: repeat(3, 0.1fr);
+      grid-template-columns: repeat(2, 0.3fr);
+      grid-gap: 3rem;
+    }
+
+    footer {
+      height: 10vh;
+      padding: 0 10rem 0rem 10rem;
+    }
+  }
+}
