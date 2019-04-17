@@ -238,7 +238,6 @@ body .social {
 }
 
 body .left {
-  border: 2px solid red;
   padding: 0 3rem 0 3rem;
   padding-bottom: 1rem;
   display: -ms-grid;
@@ -637,7 +636,6 @@ body footer .pgnum span {
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: start;
-    border: 2px solid red;
   }
   body .right {
     -webkit-box-pack: start;
