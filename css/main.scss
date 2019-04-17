@@ -210,6 +210,8 @@ Form Contact
   }
 
   .left {
+    border: 2px solid red;
+    padding: 0 3rem 0 3rem;
     padding-bottom: 1rem;
     display: grid;
     grid-template-columns: repeat(2, 0.5fr);
