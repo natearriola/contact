@@ -448,6 +448,10 @@ body footer .pgnum span {
   body .ham {
     width: 35px;
   }
+  body .logo img {
+    height: 50px;
+    width: 60px;
+  }
   body .title {
     font-size: 64px;
   }
@@ -505,13 +509,17 @@ body footer .pgnum span {
         -ms-flex-align: center;
             align-items: center;
     width: 100%;
-    margin-right: 3rem;
+    margin-right: 4rem;
   }
   body .menu li {
     font-size: 16px;
   }
   body .ham {
     width: 35px;
+  }
+  body .logo img {
+    height: 50px;
+    width: 60px;
   }
   body .title {
     padding-top: 1rem;
@@ -571,6 +579,10 @@ body footer .pgnum span {
   }
   body .menu li {
     font-size: 16px;
+  }
+  body .logo img {
+    height: 50px;
+    width: 60px;
   }
   body .title {
     font-size: 80px;
