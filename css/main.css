@@ -265,7 +265,7 @@ body .left {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  grid-gap: 3rem;
+  grid-gap: 2rem;
       grid-template-areas: "title title" "insta linkin" "twitter youtube";
 }
 
