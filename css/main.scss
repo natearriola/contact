@@ -36,21 +36,20 @@ body {
   font-family: "raleway", "Avenir";
   overflow-x: hidden;
   .header-flex {
+    height: 0;
+    padding: 2rem;
     display: flex;
     align-items: center;
-    height: 50px;
-    margin: auto 0;
-    padding: 2rem;
   }
 
   .logo {
-    max-width: 100%;
+    
     flex-grow: 1;
   }
 
   .logo img {
     height: 40px;
-
+align-self: center;
     width: 50px;
   }
 
@@ -157,11 +156,31 @@ body {
     width: 5%;
   }
 
+  /*****************
+  MENU LINK Animations
+  */
+
+  
+  .link-1::after, .link-2::after,.link-3::after {
+    content: '';
+    display: block;
+    width: 0;
+    height:2px;
+    background: map-get($colors, secondaryblue);
+    transition: width 0.3s;
+  }
+  
+  .link-1:hover::after, .link-2:hover::after, .link-3:hover::after {
+    transition: width 0.3s;
+    width:100%;
+  }
+
   /****************************
  CONTENT SCSS
  */
 
   .title {
+    padding: 1rem;
     text-align: center;
     font-family: big john;
     color: map-get($colors, blue);
@@ -170,11 +189,7 @@ body {
 Form Contact 
 */
 
-  h4 {
-    text-align: center;
-    font-family: slim joe;
-    padding: 1rem;
-  }
+  
   .right {
     display: flex;
     justify-content: center;
@@ -204,19 +219,18 @@ Form Contact
     box-shadow: none;
   }
 
-  .social {
-    position: relative;
-    top: 2rem;
+  h4{
+    text-align: center;
   }
 
   .left {
-    padding: 0 3rem 0 3rem;
+    
     padding-bottom: 1rem;
     display: grid;
-    grid-template-columns: repeat(2, 0.5fr);
-    grid-template-rows: repeat(3, 0.5fr);
-    justify-items: center;
-    align-content: center;
+    grid-template-columns: repeat(2, 0.2fr);
+    grid-template-rows: repeat(3, 0.2fr);
+    justify-content: center;
+    align-items: center;
     grid-gap: 3rem;
     grid-template-areas:
       "title title"
@@ -226,6 +240,7 @@ Form Contact
     a {
       color: map-get($colors, secondaryblue);
       transition: all 0.3s ease;
+      text-align: center;
     }
 
     a:hover {
@@ -238,13 +253,10 @@ Form Contact
   }
 
   footer {
-    height: 50px;
-    display: flex;
-    align-items: center;
-    padding: 1rem;
-    padding-bottom: 0.5rem;
-    padding-right: 2rem;
-    padding-left: 2rem;
+   display: flex;
+   height: 10vh;
+   align-items: center;
+   padding: 1rem;
     .copy {
       flex-grow: 1;
       font-size: 12px;
@@ -270,17 +282,10 @@ Form Contact
       margin-right: 3rem;
     }
 
-    .logo img {
-      height: 50px;
-
-      width: 60px;
-    }
+   
 
     .header-flex {
-      width: 80%;
-      margin: auto 0;
-      position: relative;
-      left: 10%;
+      padding: 3rem;
     }
 
     .title {
@@ -319,23 +324,18 @@ Form Contact
   body {
     overflow-x: hidden;
     .header-flex {
-      padding: 5rem;
-      padding-top: 2rem;
+      padding: 3rem;
     }
     .menu {
       display: flex;
 
       width: 100%;
       justify-content: center;
-      margin-right: 4rem;
+      
     }
-    .logo img {
-      height: 50px;
-
-      width: 60px;
-    }
+   
     .title {
-      padding-top: 1rem;
+      
       font-size: 48px;
     }
 
@@ -348,12 +348,11 @@ Form Contact
       grid-template-columns: repeat(2, 1fr);
       grid-template-rows: 60vh;
       justify-items: center;
-      align-items: start;
+      align-items: center;
+      
     }
 
-    .right {
-      justify-content: flex-start;
-    }
+   
     .social {
       top: 0;
       height: 0;
@@ -362,9 +361,12 @@ Form Contact
       grid-template-rows: repeat(3, 0.1fr);
       grid-template-columns: repeat(2, 0.3fr);
       grid-gap: 3rem;
+      
+      
     }
 
     footer {
+      align-items: center;
       height: 5vh;
       padding: 0 5rem 0rem 5rem;
     }
@@ -376,9 +378,7 @@ Form Contact
     overflow-x: hidden;
 
     .header-flex {
-      display: flex;
-      padding-top: 2rem;
-      padding: 5rem;
+      padding: 3rem;
     }
 
     .menu {
@@ -387,49 +387,48 @@ Form Contact
       align-items: center;
       width: 100%;
       padding: 0;
-      margin-right: 3rem;
+      
     }
 
     .menu li {
       font-size: 16px;
     }
 
-    .logo img {
-      width: 60px;
-      height: 50px;
-    }
+  
     .ham {
       width: 35px;
     }
 
     .title {
-      padding-top: 1rem;
-      font-size: 48px;
+    
+      font-size: 64px;
     }
 
-    .social {
-      width: 100%;
-    }
+  
 
     .grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       grid-template-rows: 60vh;
-      justify-items: center;
-      align-items: start;
+      justify-content: center;
+      align-items: center;
+      padding: 0 15rem 0rem 15rem;
     }
 
-    .right {
-      justify-content: flex-start;
+    h4{
+      font-size: 24px;
     }
+    
     .social {
       top: 0;
       height: 0;
+      
     }
     .left {
-      grid-template-rows: repeat(3, 0.1fr);
-      grid-template-columns: repeat(2, 0.3fr);
+      grid-template-rows: repeat(3, 0.3fr);
+      grid-template-columns: repeat(2, 0.5fr);
       grid-gap: 3rem;
+     
     }
 
     footer {
@@ -443,29 +442,24 @@ Form Contact
   body {
     overflow-x: hidden;
     .header-flex {
-      display: flex;
-      justify-content: center;
-      padding-top: 2rem;
-      padding: 5rem;
+      height: 0;
+      padding: 3rem;
     }
 
     .menu {
       display: flex;
       justify-content: center;
       align-items: center;
+      width: 100%;
+      margin-right: 3rem;
+     
     }
 
     .menu li {
       font-size: 16px;
     }
-    .logo {
-      padding: 0;
-      margin: auto 0;
-      width: 10%;
-    }
-    .logo img {
-      padding: 0;
-    }
+    
+   
     .ham {
       width: 35px;
     }
@@ -477,30 +471,30 @@ Form Contact
 
     h4 {
       font-size: 16px;
+      text-align: center;
     }
 
-    .social {
-      width: 100%;
+    a{
+      text-align: center;
     }
+   
 
     .grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       grid-template-rows: 60vh;
       justify-items: center;
-      align-items: start;
+      align-items: center;
+      padding: 0 15rem 0rem 15rem;
     }
 
     .right {
       justify-content: flex-start;
     }
-    .social {
-      top: 0;
-      height: 0;
-    }
+    
     .left {
       grid-template-rows: repeat(3, 0.1fr);
-      grid-template-columns: repeat(2, 0.3fr);
+      grid-template-columns: repeat(2, 1fr);
       grid-gap: 3rem;
     }
 
@@ -514,9 +508,7 @@ Form Contact
 @media screen and (min-device-width: 1920px) and (max-device-width: 2560px) and (-webkit-min-device-pixel-ratio: 1) {
   body {
     .header-flex {
-      padding: 10rem;
-      padding-top: 2rem;
-      padding-bottom: 5rem;
+     padding: 3rem;
     }
     .menu {
       display: flex;
@@ -529,53 +521,48 @@ Form Contact
     .menu li {
       font-size: 16px;
     }
-    .logo {
-      display: flex;
-      justify-content: center;
-      padding: 0;
-      width: 10%;
-    }
-
-    .logo img {
-      padding-left: 2rem;
-    }
+   
+    
 
     .title {
-      padding-top: 0rem;
-      font-size: 100px;
+      
+      font-size: 80px;
     }
 
     h4 {
       font-size: 24px;
+      text-align: center;
     }
 
-    .social {
-      width: 100%;
+   
+    a{
+      text-align: center;
     }
-
     .grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: 50vh;
-      justify-items: center;
+      grid-template-rows: 60vh;
+      justify-content: center;
       align-items: start;
+      padding: 0 20rem 0rem 20rem;
+      
+      
     }
 
-    .right {
-      justify-content: flex-start;
-    }
-    .social {
-      top: 0;
-      height: 0;
-    }
+    
+   
+    
     .left {
       grid-template-rows: repeat(3, 0.1fr);
-      grid-template-columns: repeat(2, 0.3fr);
+      grid-template-columns: repeat(2, 0.1fr);
       grid-gap: 3rem;
+      justify-content: center;
+      align-items: center;
+      
     }
 
     footer {
-      height: 10vh;
+    
       padding: 0 10rem 0rem 10rem;
     }
   }
