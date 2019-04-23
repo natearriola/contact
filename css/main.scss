@@ -18,14 +18,23 @@ $colors: (
   font-style: normal;
 }
 
+
+
+
 @font-face {
-  font-family: "slim joe";
-  src: url("/fonts/slimjoe-webfont.woff2") format("woff2"),
-    url("/fonts/slimjoe-webfont.woff") format("woff");
+  font-family: "panton";
+  src: url("/fonts/panton.woff2") format("woff2"),
+    url("/fonts/panton.WOFF") format("woff");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "panton";
+  src: url("/fonts/panton-light.woff2") format("woff2"),
+    url("/fonts/panton-light.WOFF") format("woff");
   font-weight: normal;
   font-style: normal;
 }
-
 html {
   padding: 0;
   margin: auto 0;
@@ -36,20 +45,21 @@ body {
   font-family: "raleway", "Avenir";
   overflow-x: hidden;
   .header-flex {
-    height: 0;
-    padding: 2rem;
     display: flex;
     align-items: center;
+    height: 0;
+    padding: 2rem;
+    margin: auto 0;
+    
   }
 
   .logo {
-    
     flex-grow: 1;
   }
 
   .logo img {
     height: 40px;
-align-self: center;
+    
     width: 50px;
   }
 
@@ -141,7 +151,7 @@ align-self: center;
   .menu li a {
     color: black;
     text-decoration: none;
-
+    font-family: panton;
     text-align: center;
     width: 100vh;
   }
@@ -180,22 +190,27 @@ align-self: center;
  */
 
   .title {
-    padding: 1rem;
     text-align: center;
-    font-family: big john;
+    font-family: panton;
+    font-weight: bold;
     color: map-get($colors, blue);
+    position: relative;
+    top: 2rem;
   }
   /**********************************
 Form Contact 
 */
 
   
-  .right {
+  .grid-container{
     display: flex;
     justify-content: center;
-    padding-bottom: 1rem;
     flex-direction: column;
     align-items: center;
+    height: 70vh;
+    position: relative;
+    bottom: 1rem;
+    
   }
 
   .button-container {
@@ -204,7 +219,7 @@ Form Contact
     padding-top: 1rem;
   }
   .button {
-    font-family: raleway;
+    font-family: panton;
     color: #fff;
     font-size: 12px;
     text-decoration: none;
@@ -224,11 +239,11 @@ Form Contact
   }
 
   .left {
-    
+    padding-top: 5rem;
     padding-bottom: 1rem;
     display: grid;
-    grid-template-columns: repeat(2, 0.2fr);
-    grid-template-rows: repeat(3, 0.2fr);
+    grid-template-columns: repeat(2, 0.1fr);
+    grid-template-rows: repeat(3, 0.1fr);
     justify-content: center;
     align-items: center;
     grid-gap: 2rem;
@@ -237,10 +252,18 @@ Form Contact
       "insta linkin"
       "twitter youtube";
 
+      i{
+        color:map-get($colors, secondaryblue);
+        
+      }
+
     a {
-      color: map-get($colors, secondaryblue);
+      color: map-get($colors, offblack);
       transition: all 0.3s ease;
       text-align: center;
+      font-family: panton;
+      font-size: 12px;
+      text-decoration: none;
     }
 
     a:hover {
@@ -253,8 +276,9 @@ Form Contact
   }
 
   footer {
+  
    display: flex;
-   height: 10vh;
+   height: 5vh;
    align-items: center;
    padding: 1rem;
     .copy {
@@ -274,35 +298,42 @@ Form Contact
 @media only screen and (min-device-width: 768px) and (max-device-width: 1023px) and (-webkit-min-device-pixel-ratio: 1) {
   body {
     overflow-x: hidden;
-    .menu {
-      display: flex;
-      justify-content: center;
-      width: 100%;
-
-      margin-right: 3rem;
-    }
-
-   
 
     .header-flex {
-      padding: 3rem;
+      height: 5vh;
+  padding: 1rem;
+    }
+    .menu {
+      display: flex;
+      width: 100%;
     }
 
-    .title {
-      padding-top: 1rem;
+
+    .title{
+      font-size: 80px;
+      position: relative;
+      top: 5rem;
     }
+    .grid-container{
+      height: 60vh;
+    }
+
+    
 
     .grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: 60vh;
+      grid-template-rows: 100vh;
+      grid-gap: 5rem;
       justify-items: center;
-      align-items: start;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      bottom: 5rem;
+    
     }
 
-    .right {
-      justify-content: flex-start;
-    }
+    
     .social {
       top: 0;
       height: 0;
@@ -313,10 +344,7 @@ Form Contact
       grid-gap: 3rem;
     }
 
-    footer {
-      height: 0;
-      padding: 0 5rem 1rem 5rem;
-    }
+    
   }
 }
 
@@ -330,26 +358,33 @@ Form Contact
       display: flex;
 
       width: 100%;
-      justify-content: center;
+      
       
     }
    
     .title {
-      
-      font-size: 48px;
+      position: relative;
+      top: 5rem;
+      font-size: 80px;
     }
 
     .social {
       width: 100%;
     }
 
+  
+    .grid-container{
+      height: 60vh;
+    }
     .grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: 60vh;
+      grid-template-rows: 100vh;
       justify-items: center;
       align-items: center;
-      
+      grid-gap: 5rem;
+      position: relative;
+      bottom: 5rem;
     }
 
    
@@ -366,9 +401,9 @@ Form Contact
     }
 
     footer {
-      align-items: center;
-      height: 5vh;
-      padding: 0 5rem 0rem 5rem;
+    align-items: center;
+    padding: 3rem;
+    padding-top: 0;
     }
   }
 }
@@ -383,10 +418,8 @@ Form Contact
 
     .menu {
       display: flex;
-      justify-content: center;
-      align-items: center;
       width: 100%;
-      padding: 0;
+      
       
     }
 
@@ -404,25 +437,28 @@ Form Contact
     }
 
     .title {
-    
-      font-size: 64px;
+      font-size: 80px;
+      position: relative;
+      top: 5rem;
     }
     
-
+    .grid-container{
+      height: 60vh;
+    }
   
 
     .grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: 60vh;
+      grid-template-rows: 100vh;
       justify-content: center;
       align-items: center;
-      padding: 0 15rem 0rem 15rem;
+      grid-gap: 5rem;
+      position: relative;
+      bottom: 5rem;
     }
 
-    h4{
-      font-size: 24px;
-    }
+   
     
     .social {
       top: 0;
@@ -436,10 +472,7 @@ Form Contact
      
     }
 
-    footer {
-      height: 5vh;
-      padding: 0 5rem 0 5rem;
-    }
+   
   }
 }
 
@@ -447,16 +480,13 @@ Form Contact
   body {
     overflow-x: hidden;
     .header-flex {
-      height: 0;
       padding: 3rem;
     }
 
     .menu {
       display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-      margin-right: 4rem;
+     width: 100%;
+     
      
     }
 
@@ -474,57 +504,54 @@ Form Contact
     }
 
     .title {
-      padding-top: 1rem;
-      font-size: 48px;
+      position: relative;
+      top: 5rem;
+      font-size: 80px;
     }
 
-    h4 {
-      font-size: 16px;
-      text-align: center;
-    }
 
     a{
       text-align: center;
     }
-   
+   .grid-container{
+     height: 60vh;
+   }
 
     .grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: 60vh;
+      grid-template-rows: 100vh;
       justify-items: center;
       align-items: center;
-      padding: 0 15rem 0rem 15rem;
+      grid-gap: 5rem;
+      position: relative;
+      bottom: 5rem;
     }
 
-    .right {
-      justify-content: flex-start;
-    }
-    
     .left {
       grid-template-rows: repeat(3, 0.1fr);
       grid-template-columns: repeat(2, 1fr);
       grid-gap: 3rem;
     }
 
-    footer {
-      height: 0;
-      padding: 0 10rem 3rem 10rem;
+    footer{
+      padding: 4rem;
+      padding-top: 0;
     }
   }
 }
 
 @media screen and (min-device-width: 1920px) and (max-device-width: 2560px) and (-webkit-min-device-pixel-ratio: 1) {
   body {
+    overflow-y: hidden;
     .header-flex {
-     padding: 3rem;
+     padding: 4rem;
     }
     .menu {
       display: flex;
 
       width: 100%;
-      justify-content: center;
-      margin-right: 2rem;
+      
     }
 
     .menu li {
@@ -538,26 +565,31 @@ Form Contact
 
 
     .title {
-      
-      font-size: 80px;
+      position:relative;
+      top: 5rem;
+      font-size: 100px;
     }
 
-    h4 {
-      font-size: 24px;
-      text-align: center;
-    }
-
+   
    
     a{
       text-align: center;
     }
+
+    .grid-container{
+      height: 50vh;
+    }
     .grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: 60vh;
+      grid-template-rows: 100vh;
       justify-content: center;
-      align-items: start;
-      padding: 0 20rem 0rem 20rem;
+      align-items: center;
+      grid-gap: 5rem;
+    
+      position: relative;
+      bottom: 5rem;
+      
       
       
     }
@@ -574,9 +606,78 @@ Form Contact
       
     }
 
-    footer {
-    
-      padding: 0 10rem 0rem 10rem;
+   
+  }
+}
+
+@media screen and (min-device-width: 2560px) and (-webkit-min-device-pixel-ratio: 1) {
+  body {
+    overflow-y: hidden;
+    .header-flex {
+     padding: 4rem;
     }
+    .menu {
+      display: flex;
+
+      width: 100%;
+      
+    }
+
+    .menu li {
+      font-size: 16px;
+    }
+   
+    .logo img {
+      height: 50px;
+      width: 60px;
+    }
+
+
+    .title {
+      
+      font-size: 150px;
+      position: relative;
+      top: 20rem;
+    }
+
+   
+   
+    a{
+      text-align: center;
+    }
+
+    .grid-container{
+      height: 50vh;
+      
+    }
+    .grid {
+      padding: 5rem;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: 50vh;
+      justify-content: center;
+      align-items: center;
+      grid-gap: 5rem;
+      
+    
+
+      
+      
+      
+    }
+
+    
+   
+    
+    .left {
+      grid-template-rows: repeat(3, 0.1fr);
+      grid-template-columns: repeat(2, 0.1fr);
+      grid-gap: 3rem;
+      justify-content: center;
+      align-items: center;
+      
+    }
+
+   
   }
 }

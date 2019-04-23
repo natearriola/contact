@@ -8,8 +8,15 @@
 }
 
 @font-face {
-  font-family: "slim joe";
-  src: url("/fonts/slimjoe-webfont.woff2") format("woff2"), url("/fonts/slimjoe-webfont.woff") format("woff");
+  font-family: "panton";
+  src: url("/fonts/panton.woff2") format("woff2"), url("/fonts/panton.WOFF") format("woff");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "panton";
+  src: url("/fonts/panton-light.woff2") format("woff2"), url("/fonts/panton-light.WOFF") format("woff");
   font-weight: normal;
   font-style: normal;
 }
@@ -36,14 +43,15 @@ Form Contact
 }
 
 body .header-flex {
-  height: 0;
-  padding: 2rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  height: 0;
+  padding: 2rem;
+  margin: auto 0;
 }
 
 body .logo {
@@ -54,9 +62,6 @@ body .logo {
 
 body .logo img {
   height: 40px;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
   width: 50px;
 }
 
@@ -163,6 +168,7 @@ body .nav li a:hover {
 body .menu li a {
   color: black;
   text-decoration: none;
+  font-family: panton;
   text-align: center;
   width: 100vh;
 }
@@ -194,20 +200,21 @@ body .link-1:hover::after, body .link-2:hover::after, body .link-3:hover::after 
 }
 
 body .title {
-  padding: 1rem;
   text-align: center;
-  font-family: big john;
+  font-family: panton;
+  font-weight: bold;
   color: #0a7198;
+  position: relative;
+  top: 2rem;
 }
 
-body .right {
+body .grid-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding-bottom: 1rem;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -215,6 +222,9 @@ body .right {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  height: 70vh;
+  position: relative;
+  bottom: 1rem;
 }
 
 body .button-container {
@@ -228,7 +238,7 @@ body .button-container {
 }
 
 body .button {
-  font-family: raleway;
+  font-family: panton;
   color: #fff;
   font-size: 12px;
   text-decoration: none;
@@ -252,13 +262,14 @@ body h4 {
 }
 
 body .left {
+  padding-top: 5rem;
   padding-bottom: 1rem;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (0.2fr)[2];
-      grid-template-columns: repeat(2, 0.2fr);
-  -ms-grid-rows: (0.2fr)[3];
-      grid-template-rows: repeat(3, 0.2fr);
+  -ms-grid-columns: (0.1fr)[2];
+      grid-template-columns: repeat(2, 0.1fr);
+  -ms-grid-rows: (0.1fr)[3];
+      grid-template-rows: repeat(3, 0.1fr);
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -269,11 +280,18 @@ body .left {
       grid-template-areas: "title title" "insta linkin" "twitter youtube";
 }
 
-body .left a {
+body .left i {
   color: #53a7ea;
+}
+
+body .left a {
+  color: #1a1a1a;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
   text-align: center;
+  font-family: panton;
+  font-size: 12px;
+  text-decoration: none;
 }
 
 body .left a:hover {
@@ -291,7 +309,7 @@ body footer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 10vh;
+  height: 5vh;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -318,38 +336,41 @@ body footer .pgnum span {
   body {
     overflow-x: hidden;
   }
+  body .header-flex {
+    height: 5vh;
+    padding: 1rem;
+  }
   body .menu {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
     width: 100%;
-    margin-right: 3rem;
-  }
-  body .header-flex {
-    padding: 3rem;
   }
   body .title {
-    padding-top: 1rem;
+    font-size: 80px;
+    position: relative;
+    top: 5rem;
+  }
+  body .grid-container {
+    height: 60vh;
   }
   body .grid {
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: (1fr)[2];
         grid-template-columns: repeat(2, 1fr);
-    -ms-grid-rows: 60vh;
-        grid-template-rows: 60vh;
+    -ms-grid-rows: 100vh;
+        grid-template-rows: 100vh;
+    grid-gap: 5rem;
     justify-items: center;
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: start;
-  }
-  body .right {
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    position: relative;
+    bottom: 5rem;
   }
   body .social {
     top: 0;
@@ -361,10 +382,6 @@ body footer .pgnum span {
     -ms-grid-columns: (0.3fr)[2];
         grid-template-columns: repeat(2, 0.3fr);
     grid-gap: 3rem;
-  }
-  body footer {
-    height: 0;
-    padding: 0 5rem 1rem 5rem;
   }
 }
 
@@ -380,27 +397,32 @@ body footer .pgnum span {
     display: -ms-flexbox;
     display: flex;
     width: 100%;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
   }
   body .title {
-    font-size: 48px;
+    position: relative;
+    top: 5rem;
+    font-size: 80px;
   }
   body .social {
     width: 100%;
+  }
+  body .grid-container {
+    height: 60vh;
   }
   body .grid {
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: (1fr)[2];
         grid-template-columns: repeat(2, 1fr);
-    -ms-grid-rows: 60vh;
-        grid-template-rows: 60vh;
+    -ms-grid-rows: 100vh;
+        grid-template-rows: 100vh;
     justify-items: center;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    grid-gap: 5rem;
+    position: relative;
+    bottom: 5rem;
   }
   body .social {
     top: 0;
@@ -417,8 +439,8 @@ body footer .pgnum span {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    height: 5vh;
-    padding: 0 5rem 0rem 5rem;
+    padding: 3rem;
+    padding-top: 0;
   }
 }
 
@@ -433,14 +455,7 @@ body footer .pgnum span {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
     width: 100%;
-    padding: 0;
   }
   body .menu li {
     font-size: 16px;
@@ -453,25 +468,29 @@ body footer .pgnum span {
     width: 60px;
   }
   body .title {
-    font-size: 64px;
+    font-size: 80px;
+    position: relative;
+    top: 5rem;
+  }
+  body .grid-container {
+    height: 60vh;
   }
   body .grid {
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: (1fr)[2];
         grid-template-columns: repeat(2, 1fr);
-    -ms-grid-rows: 60vh;
-        grid-template-rows: 60vh;
+    -ms-grid-rows: 100vh;
+        grid-template-rows: 100vh;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    padding: 0 15rem 0rem 15rem;
-  }
-  body h4 {
-    font-size: 24px;
+    grid-gap: 5rem;
+    position: relative;
+    bottom: 5rem;
   }
   body .social {
     top: 0;
@@ -484,10 +503,6 @@ body footer .pgnum span {
         grid-template-columns: repeat(2, 0.5fr);
     grid-gap: 3rem;
   }
-  body footer {
-    height: 5vh;
-    padding: 0 5rem 0 5rem;
-  }
 }
 
 @media screen and (min-device-width: 1600px) and (max-device-width: 1920px) {
@@ -495,21 +510,13 @@ body footer .pgnum span {
     overflow-x: hidden;
   }
   body .header-flex {
-    height: 0;
     padding: 3rem;
   }
   body .menu {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
     width: 100%;
-    margin-right: 4rem;
   }
   body .menu li {
     font-size: 16px;
@@ -522,33 +529,30 @@ body footer .pgnum span {
     width: 60px;
   }
   body .title {
-    padding-top: 1rem;
-    font-size: 48px;
-  }
-  body h4 {
-    font-size: 16px;
-    text-align: center;
+    position: relative;
+    top: 5rem;
+    font-size: 80px;
   }
   body a {
     text-align: center;
+  }
+  body .grid-container {
+    height: 60vh;
   }
   body .grid {
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: (1fr)[2];
         grid-template-columns: repeat(2, 1fr);
-    -ms-grid-rows: 60vh;
-        grid-template-rows: 60vh;
+    -ms-grid-rows: 100vh;
+        grid-template-rows: 100vh;
     justify-items: center;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    padding: 0 15rem 0rem 15rem;
-  }
-  body .right {
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
+    grid-gap: 5rem;
+    position: relative;
+    bottom: 5rem;
   }
   body .left {
     -ms-grid-rows: (0.1fr)[3];
@@ -558,24 +562,23 @@ body footer .pgnum span {
     grid-gap: 3rem;
   }
   body footer {
-    height: 0;
-    padding: 0 10rem 3rem 10rem;
+    padding: 4rem;
+    padding-top: 0;
   }
 }
 
 @media screen and (min-device-width: 1920px) and (max-device-width: 2560px) and (-webkit-min-device-pixel-ratio: 1) {
+  body {
+    overflow-y: hidden;
+  }
   body .header-flex {
-    padding: 3rem;
+    padding: 4rem;
   }
   body .menu {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     width: 100%;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    margin-right: 2rem;
   }
   body .menu li {
     font-size: 16px;
@@ -585,29 +588,32 @@ body footer .pgnum span {
     width: 60px;
   }
   body .title {
-    font-size: 80px;
-  }
-  body h4 {
-    font-size: 24px;
-    text-align: center;
+    position: relative;
+    top: 5rem;
+    font-size: 100px;
   }
   body a {
     text-align: center;
+  }
+  body .grid-container {
+    height: 50vh;
   }
   body .grid {
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: (1fr)[2];
         grid-template-columns: repeat(2, 1fr);
-    -ms-grid-rows: 60vh;
-        grid-template-rows: 60vh;
+    -ms-grid-rows: 100vh;
+        grid-template-rows: 100vh;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: start;
-    padding: 0 20rem 0rem 20rem;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    grid-gap: 5rem;
+    position: relative;
+    bottom: 5rem;
   }
   body .left {
     -ms-grid-rows: (0.1fr)[3];
@@ -622,8 +628,67 @@ body footer .pgnum span {
         -ms-flex-align: center;
             align-items: center;
   }
-  body footer {
-    padding: 0 10rem 0rem 10rem;
+}
+
+@media screen and (min-device-width: 2560px) and (-webkit-min-device-pixel-ratio: 1) {
+  body {
+    overflow-y: hidden;
+  }
+  body .header-flex {
+    padding: 4rem;
+  }
+  body .menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+  }
+  body .menu li {
+    font-size: 16px;
+  }
+  body .logo img {
+    height: 50px;
+    width: 60px;
+  }
+  body .title {
+    font-size: 150px;
+    position: relative;
+    top: 20rem;
+  }
+  body a {
+    text-align: center;
+  }
+  body .grid-container {
+    height: 50vh;
+  }
+  body .grid {
+    padding: 5rem;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+    -ms-grid-rows: 50vh;
+        grid-template-rows: 50vh;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    grid-gap: 5rem;
+  }
+  body .left {
+    -ms-grid-rows: (0.1fr)[3];
+        grid-template-rows: repeat(3, 0.1fr);
+    -ms-grid-columns: (0.1fr)[2];
+        grid-template-columns: repeat(2, 0.1fr);
+    grid-gap: 3rem;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
 }
 /*# sourceMappingURL=main.css.map */
